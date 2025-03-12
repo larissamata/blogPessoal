@@ -37,7 +37,18 @@ public class Postagem {
 	@ManyToOne // classe postagem = MANY classe tema = ONE - definindo a relação
 	@JsonIgnoreProperties("postagem")
 	private Tema tema; // adicionando o objeto tema (id, descrição)
-	
+
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Tema getTema() {
 		return tema;
